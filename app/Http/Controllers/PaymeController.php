@@ -189,6 +189,19 @@ class PaymeController extends Controller
                     ]
                 ];
                 return json_encode($response);
+            } else if ($transaction->state == -2) {
+                Log::info('Test');
+                $response = [
+                    "result" => [
+                        'create_time' => intval($transaction->paycom_time),
+                        'perform_time' => intval($transaction->perform_time_unix),
+                        'cancel_time' => intval($transaction->cancel_time),
+                        'transaction' => strval($transaction->id),
+                        "state" => $transaction->state,
+                        "reason" => 5
+                    ]
+                ];
+                return json_encode($response);
             }
         }
         if ($req->input('method') == "PerformTransaction") {

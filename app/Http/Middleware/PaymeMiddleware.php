@@ -31,7 +31,7 @@ class PaymeMiddleware
         list($username, $password) = explode(':', $decodedCredentials);
         // \Log::info('Username and Password: ' . $username . ':' . $password);
         $expectedUsername = "Paycom"; // username
-        $expectedPassword = "Y6f0Ii4NvFPbAQc4Nzvc75edBVCZ4nCd689dae9a5a358"; // parol
+        $expectedPassword = "tFIZSQhnnwaosM6dPqyovltibtWLvaZR695b76126d7a3"; // parol
 
         if ($username !== $expectedUsername || $password !== $expectedPassword) {
             return response()->json([
